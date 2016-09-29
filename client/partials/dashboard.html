@@ -1,0 +1,29 @@
+<div class="partial">
+	<div id="top">
+		<h1>Bucket List </h1>
+		<a href="#/">Logout</a>
+		<a href="#/dashboard">Home</a>
+	</div>
+		<h1>Welcome {{lc.cu.username}} </h1>
+		<form action="" ng-init=lc.getUsers()>
+			<input type="text" ng-model=lc.title placeholder="Title">
+			<input type="text" ng-model=lc.description placeholder="Description">
+    		<select name="singleSelect" ng-model="lc.secondUser">
+				<option value="">---Please select---</option>
+      			<option ng-repeat="user in lc.users" value="{{user.username}}">{{user.username}}</option>
+    		</select>
+			<input type="submit" value= "Add to List" ng-click=lc.addItem()>
+		</form>
+	<div ng-init=lc.getUserList(lc.cu.username)>
+		<h1>Before I die I want to..</h1>
+		<ul>
+			<li ng-repeat="item in lc.userlist"> <input type="checkbox" ng-model=item.check ng-change=lc.updateCheck(item.title,item.user,item.check)>{{item.title}} - {{item.description}} - {{item.createdAt | date: 'mediumDate' }} {{item.check}}</li>
+		</ul>
+	</div>
+	<div>
+		<h1>List of Other users(Click to view profile):</h1>
+		<ul>
+			<li ng-repeat="user in lc.users"> <a href="#/user/{{user.username}}">{{user.username}}</a></li>
+		</ul>
+	</div>
+</div>

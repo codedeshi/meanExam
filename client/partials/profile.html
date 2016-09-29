@@ -1,0 +1,18 @@
+<div class="partial">
+	<div id="top">
+		<h1>{{pc.singlePoll.question}}</h1>
+		<a href="#/">Logout</a>
+		<a href="#/dashboard">Home </a>
+	</div>
+	<div ng-init=lc.getUserList()>
+		<h1>Before I die I want to..</h1>
+		<h3>Done</h3>
+		<ul>
+			<li ng-repeat="item in lc.userlist" ng-if="item.check"> <input type="checkbox" ng-model=item.check ng-change=lc.updateCheck(item.title,item.user,item.check)>{{item.title}} - {{item.description}} - {{item.createdAt | date: 'mediumDate' }} </li>
+		</ul>
+		<h3>Pending</h3>
+		<ul>
+			<li ng-repeat="item in lc.userlist"ng-if="!item.check"><input type="checkbox" ng-model=item.check ng-change=lc.updateCheck(item.title,item.user,item.check)>{{item.title}}- {{item.description}}, {{item.createdAt | date: 'mediumDate' }} </li>
+		</ul>
+	</div>
+</div>
