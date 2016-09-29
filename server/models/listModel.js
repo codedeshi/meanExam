@@ -25,6 +25,10 @@ var listSchema = new mongoose.Schema({
 					type : String,
 					required:  requiredMessage,
 	},
+	addedBy	:	{
+					type : String,
+					required:  requiredMessage,
+	}
 },  {timestamps: true});
 
 var listModel = mongoose.model('listModel', listSchema);

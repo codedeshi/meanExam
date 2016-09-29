@@ -26,12 +26,14 @@ myApp.controller('listController', function($routeParams,$location, listFactory,
 			userOne = {
 				user		: self.cu.username,
 				title 		: self.title,
-				description	: self.description
+				description	: self.description,
+				addedBy		: self.cu.username
 			}
 			userTwo = {
 				user		: self.secondUser,
 				title 		: self.title,
-				description	: self.description
+				description	: self.description,
+				addedBy		: self.cu.username
 			}
 			self.createObj.push(userOne,userTwo);
 		}
@@ -39,7 +41,8 @@ myApp.controller('listController', function($routeParams,$location, listFactory,
 			userOne = {
 				user		: self.cu.username,
 				title 		: self.title,
-				description	: self.description
+				description	: self.description,
+				addedBy		: self.cu.username
 			}
 			self.createObj.push(userOne);
 		}

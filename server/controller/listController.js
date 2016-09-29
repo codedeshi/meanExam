@@ -5,6 +5,7 @@ function ListController(){
 	var votes;
 
 	this.addItem = function(req,res){
+		console.log(req.body);
 		var error =[];
 		List.insertMany(req.body, function(err,data) {
 			if(err) {

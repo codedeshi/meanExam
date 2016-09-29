@@ -17,7 +17,7 @@
 	<div ng-init=lc.getUserList(lc.cu.username)>
 		<h1>Before I die I want to..</h1>
 		<ul>
-			<li ng-repeat="item in lc.userlist"> <input type="checkbox" ng-model=item.check ng-change=lc.updateCheck(item.title,item.user,item.check)>{{item.title}} - {{item.description}} - {{item.createdAt | date: 'mediumDate' }}</li>
+			<li ng-repeat="item in lc.userlist"> <input type="checkbox" ng-model=item.check ng-change=lc.updateCheck(item.title,item.user,item.check)>{{item.addedBy}} | {{item.title}} - {{item.description}} - {{item.createdAt | date: 'mediumDate' }}</li>
 		</ul>
 	</div>
 	<div>
